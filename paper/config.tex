@@ -1,0 +1,72 @@
+\usepackage{fullpage}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{tikz}
+
+\usepackage{array}   % for \newcolumntype macro
+
+
+
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+\newcolumntype{R}{>{$}r<{$}} % math-mode version of "r" column type
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
+
+
+\renewcommand{\baselinestretch}{1.3}
+
+\newcounter{questioncounter}
+\setcounter{questioncounter}{1}
+
+\newcommand{\changequestiontitle}[1]{\def\questiontitle{#1 }}
+\changequestiontitle{Question}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codelightgray}{rgb}{0.9,0.9,0.95}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codeyellow}{rgb}{0.51, 0.37, 0.012}
+\definecolor{codemagneta}{rgb}{0.72, 0, 0.22}
+
+\definecolor{intblue}{rgb}{0.04, 0.5, 0.84}
+\definecolor{intbgblue}{rgb}{0.87, 0.92, 0.96}
+
+\lstdefinelanguage{js} {
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstset {
+	aboveskip=\baselineskip,
+	commentstyle=\color{codegreen},
+	keywordstyle=\bfseries\color{codemagneta},
+	numberstyle=\ttfamily\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	backgroundcolor=\color{codelightgray},
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	xleftmargin=2em,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+}
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand{\question}[1]{
+	\hfill \break\noindent\textbf{\color{intblue} \questiontitle  \thequestioncounter.} #1 \\ \stepcounter{questioncounter}
+}
